@@ -1,4 +1,4 @@
-package ttp;
+package ttp.Heuristics;
 
 import java.io.BufferedReader;
 import java.io.File;
