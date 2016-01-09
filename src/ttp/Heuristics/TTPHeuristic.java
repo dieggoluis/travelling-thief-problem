@@ -19,20 +19,18 @@ public class TTPHeuristic {
       TSPHeuristic tsp = new TSPHeuristic(this.instance);
       int[] tour = tsp.getTspTour();
       
-      double[] D = new double[tour.length];
+
+      int number_nodes = this.instance.nodes.length;
+      double[] D = new double[number_nodes];
 
       Point2D p1 = new Point2D.Double(
-            instance.nodes[tour.length-1][1], instance.nodes[tour.length-1][2]);
+            instance.nodes[number_nodes-1][1], instance.nodes[number_nodes-1][2]);
       Point2D p2 = new Point2D.Double(
             instance.nodes[0][1], instance.nodes[0][2]);
 
-      D[tour.length-1] = p1.distance(p2);
-      for(int i=tour.length-2; i>=0; i++)
-      {
-         p2 = (Point2D) p1.clone();
-         p1.setLocation(instance.nodes[i][1], instance.nodes[i][2]);
-         D[i] = D[i+1] + p1.distance(p2);
-      }
+      D[number_nodes-1] = instance.distances(number_nodes-1, 0);
+      for(int i=number_nodes-2; i>=0; i--)
+         D[i] = D[i+1] + instance.distances(i, i+1);
       
       double _t = D[0]/instance.maxSpeed;
       
@@ -47,7 +45,7 @@ public class TTPHeuristic {
          int weight_xi_k = instance.items[k][2];
          int profit_xi_k = instance.items[k][1];
 
-         double txi_k = D[xi]/(instance.maxSpeed - v*weight_xi_k); //tratar casos com try, xi muito grande ou tempo nagativo
+         double txi_k = D[xi]/(instance.maxSpeed - v*weight_xi_k);
 
          double _txi_k = _t - D[xi] + txi_k;
          double score_xi_k = profit_xi_k - rentingRatio * txi_k;
@@ -61,27 +59,22 @@ public class TTPHeuristic {
       
       long Wc = 0;
       long W = instance.capacityOfKnapsack;
-      List<Integer> temp_items = new LinkedList<Integer>();
+
+      int[] packingPlan = new int[instance.numberOfItems];
+
       for(Element e : elements)
       {
          int weight = instance.items[e.getItem()][2];
          if(Wc+weight < W && e.getU() > 0)
          {
-            temp_items.add(e.getItem());
+            packingPlan[e.getItem()]=1;
             Wc += weight;
          }
          if(Wc == W) break;
       }
       
-      int i=0;
-      int[] packingPlan = new int[temp_items.size()];
-      for(int item: temp_items)
-         packingPlan[i++] = item;  
-      
       TTPSolution solution = new TTPSolution(tour, packingPlan);
       
-      //Calular profit ??
-
       return solution;
    }
 }
