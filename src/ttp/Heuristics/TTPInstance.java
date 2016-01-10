@@ -43,6 +43,16 @@ public class TTPInstance {
 
       TTPHeuristic heuristic = new TTPHeuristic(test);
       TTPSolution solution = heuristic.SimpleHeuristic();
+      System.out.println("\n################### Simple Heuristic (SH) ###################");
+      test.evaluate(solution);
+
+      int number_iterations = 10000;
+      TTPSolution solution2 = heuristic.RLS(number_iterations);
+      System.out.println("\n################### Random Local Search (RLS) ###################");
+      test.evaluate(solution2);
+
+      solution = heuristic.EA(number_iterations);
+      System.out.println("\n################### Evolutionary Algorithm (EA) ###################");
       test.evaluate(solution);
 
       System.out.println("done");

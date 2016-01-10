@@ -16,6 +16,9 @@ public class TTPHeuristic {
    
    public TTPSolution SimpleHeuristic()
    {
+      TSPInstance tspI = new TSPInstance(this.instance);
+      tspI.getTspTour();
+
       TSPHeuristic tsp = new TSPHeuristic(this.instance);
       int[] tour = tsp.getTspTour();
       
@@ -76,6 +79,78 @@ public class TTPHeuristic {
       TTPSolution solution = new TTPSolution(tour, packingPlan);
       
       return solution;
+   }
+   
+   public TTPSolution RLS(int numberOfIterations){
+	   TSPHeuristic tsp = new TSPHeuristic(this.instance); // Modify to the wanted heuristic
+	   int[] tour = tsp.getTspTour();
+	   // Initialize such that no items are packed
+	   TTPSolution output = new TTPSolution(tour, new int[this.instance.numberOfItems]);
+         System.out.println("\n\n ------------------------------------------------------------ \n\n");
+	   
+	   // Counter for the quantity of iterations that represents no change to the objective value
+	   int i = 0;
+	   // Random number generator
+	   Random randomGenerator = new Random();
+	   while(i < numberOfIterations){
+		   // Copy the original solution
+		   int[] auxPackingPlan = new int[this.instance.numberOfItems];
+		   for(int j = 0; j < this.instance.numberOfItems; j++)
+			   auxPackingPlan[j] = output.packingPlan[j];
+
+		   int randomInt = randomGenerator.nextInt(this.instance.numberOfItems);
+		   // Change the state of one random item to 1 (packed) if it's 0 (not packed) and the other way around
+		   auxPackingPlan[randomInt] = 1 - auxPackingPlan[randomInt];
+		   TTPSolution auxSolution = new TTPSolution(tour, auxPackingPlan);
+		   // If the modified solution is worse than the original one or not feasible
+		   if(auxSolution.ob < output.ob || auxSolution.wendUsed > this.instance.capacityOfKnapsack)
+			   // Increase counter
+			   i++;
+		   // If it's better
+		   else{
+			   // Change the current solution
+			   output = auxSolution;
+			   // Restart counter
+			   i = 0;
+		   }
+	   }
+	   return output;
+   }
+   
+   public TTPSolution EA(int numberOfIterations){
+	   TSPHeuristic tsp = new TSPHeuristic(this.instance); // Modify to the wanted heuristic
+	   int[] tour = tsp.getTspTour();
+	   // Initialize such that no items are packed
+	   TTPSolution output = new TTPSolution(tour, new int[this.instance.numberOfItems]);
+	   
+	   // Counter for the quantity of iterations that represents no change to the objective value
+	   int i = 0;
+	   // Random number generator
+	   Random randomGenerator = new Random();
+	   double cutoff = 1.0/this.instance.numberOfItems;
+	   while(i < numberOfIterations){
+		   // Change the state of an item with probability 1/m
+		   int[] auxPackingPlan = new int[this.instance.numberOfItems];
+		   for(int j = 0; j < this.instance.numberOfItems; j++){
+			   if(randomGenerator.nextDouble() > cutoff)
+				   auxPackingPlan[j] = output.packingPlan[j];
+			   else
+				   auxPackingPlan[j] = 1 - output.packingPlan[j];
+		   }
+		   TTPSolution auxSolution = new TTPSolution(tour, auxPackingPlan);
+		   // If the modified solution is worse than the original one or not feasible
+		   if(auxSolution.ob < output.ob || auxSolution.wendUsed > this.instance.capacityOfKnapsack)
+			   // Increase counter
+			   i++;
+		   // If it's better
+		   else{
+			   // Change the current solution
+			   output = auxSolution;
+			   // Restart counter
+			   i = 0;
+		   }
+	   }
+	   return output;   
    }
 }
 
