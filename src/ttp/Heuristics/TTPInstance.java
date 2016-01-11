@@ -46,7 +46,7 @@ public class TTPInstance {
       TTPSolution solution = heuristic.SimpleHeuristic();
       System.out.println("\n################### Simple Heuristic (SH) ###################");
       test.evaluate(solution, false);
-      solution.printSimple();
+      solution.printSolution();
       System.out.println();
 
       int number_iterations = 25;
@@ -54,20 +54,20 @@ public class TTPInstance {
       solution = heuristic.RLS(number_iterations);
       System.out.println("\n################### Random Local Search (RLS) ###################");
       test.evaluate(solution, false);
-      solution.printSimple();
+      solution.printSolution();
       System.out.println();
 
       solution = heuristic.EA(number_iterations);
       System.out.println("\n################### Evolutionary Algorithm (EA) ###################");
       test.evaluate(solution, false);
-      solution.printSimple();
+      solution.printSolution();
       System.out.println();
 
       double T = 0.1; 
       solution = heuristic.RLSMetropolis(number_iterations, T);
       System.out.println("\n################### RLS Metropolis Algorithm ###################");
       test.evaluate(solution, false);
-      solution.printSimple();
+      solution.printSolution();
 
       System.out.println();
       //test.printInstance(false);

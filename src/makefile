@@ -4,7 +4,3 @@ ALL:
 
 clean:
 	rm ttp/Heuristics/*.class
-
-tests:
-	sh tests.sh
-
