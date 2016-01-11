@@ -1,0 +1,145 @@
+sh tests.sh
+Reading TTPInstance from file: ttp/instances/sample/a280_n1395_bounded-strongly-corr_02.ttp... 
+################### Simple Heuristic (SH) ###################
+Profit: 292040.0 Objective value: -4595.406971500546 Time: 5316.999587228904
+
+################### Random Local Search (RLS) ###################
+Profit: 276137.0 Objective value: 11016.150229830935 Time: 4752.12134379224
+
+################### Evolutionary Algorithm (EA) ###################
+Profit: 300197.0 Objective value: 43106.56615610505 Time: 4608.181284170908
+
+################### RLS Metropolis Algorithm ###################
+Profit: 264430.0 Objective value: -54.21029383683344 Time: 4740.7099891349135
+Reading TTPInstance from file: ttp/instances/sample/a280_n1395_uncorr-similar-weights_10.ttp... 
+################### Simple Heuristic (SH) ###################
+Profit: 676389.0 Objective value: -161393.72762933152 Time: 8187.068578416217
+
+################### Random Local Search (RLS) ###################
+Profit: 515499.0 Objective value: 35308.44865407166 Time: 4692.568663597463
+
+################### Evolutionary Algorithm (EA) ###################
+Profit: 565236.0 Objective value: 78810.05777966022 Time: 4753.502806804845
+
+################### RLS Metropolis Algorithm ###################
+Profit: 520107.0 Objective value: 34646.501209592505 Time: 4744.068198870395
+Reading TTPInstance from file: ttp/instances/sample/a280_n1395_uncorr_07.ttp... 
+################### Simple Heuristic (SH) ###################
+Profit: 514320.0 Objective value: -256694.2515238315 Time: 8513.849950572345
+
+################### Random Local Search (RLS) ###################
+Profit: 406958.0 Objective value: -451.492367505678 Time: 4498.7797302065555
+
+################### Evolutionary Algorithm (EA) ###################
+Profit: 482569.0 Objective value: 73465.92125215934 Time: 4517.4809932402895
+
+################### RLS Metropolis Algorithm ###################
+Profit: 380874.0 Objective value: -25252.051805261697 Time: 4484.607462513932
+Reading TTPInstance from file: ttp/instances/sample/d1655_n16540_bounded-strongly-corr_02.ttp... 
+################### Simple Heuristic (SH) ###################
+Profit: 3401543.0 Objective value: -136782.5915533579 Time: 143775.92814113604
+
+################### Random Local Search (RLS) ###################
+Profit: 2800597.0 Objective value: -296432.5768013154 Time: 125844.35501021193
+
+################### Evolutionary Algorithm (EA) ###################
+Profit: 3411592.0 Objective value: 690242.4665895379 Time: 110579.01395410248
+
+################### RLS Metropolis Algorithm ###################
+Profit: 2968274.0 Objective value: -8767.803830774501 Time: 120968.78520238824
+Reading TTPInstance from file: ttp/instances/sample/d1655_n16540_uncorr-similar-weights_07.ttp... 
+################### Simple Heuristic (SH) ###################
+Profit: 5860446.0 Objective value: -2763579.8849410787 Time: 204022.37721649106
+
+################### Random Local Search (RLS) ###################
+Profit: 4993291.0 Objective value: -25930.209168549627 Time: 118741.92593254197
+
+################### Evolutionary Algorithm (EA) ###################
+Profit: 5578932.0 Objective value: 583167.7588063991 Time: 118186.99411387747
+
+################### RLS Metropolis Algorithm ###################
+Profit: 4721004.0 Objective value: -241522.11937674135 Time: 117400.66523247553
+Reading TTPInstance from file: ttp/instances/sample/d1655_n16540_uncorr-similar-weights_10.ttp... 
+################### Simple Heuristic (SH) ###################
+Profit: 8133995.0 Objective value: -1963700.792949818 Time: 208889.03171182907
+
+################### Random Local Search (RLS) ###################
+Profit: 6045913.0 Objective value: 523083.41350469086 Time: 114249.68114388309
+
+################### Evolutionary Algorithm (EA) ###################
+Profit: 6811767.0 Objective value: 1203096.6147235986 Time: 116025.4527363757
+
+################### RLS Metropolis Algorithm ###################
+Profit: 5989873.0 Objective value: 492500.5295479838 Time: 113723.05482937559
+Reading TTPInstance from file: ttp/instances/sample/eil51_n150_bounded-strongly-corr_02.ttp... 
+################### Simple Heuristic (SH) ###################
+Profit: 31168.0 Objective value: -6757.581436094406 Time: 1093.5865466001846
+
+################### Random Local Search (RLS) ###################
+Profit: 26632.0 Objective value: -818.2030141363794 Time: 791.5283452749821
+
+################### Evolutionary Algorithm (EA) ###################
+Profit: 29287.0 Objective value: 1833.1444544830047 Time: 791.6336662490484
+
+################### RLS Metropolis Algorithm ###################
+Profit: 27268.0 Objective value: -1650.4989747764412 Time: 833.8667524445341
+Reading TTPInstance from file: ttp/instances/sample/eil51_n150_uncorr-similar-weights_10.ttp... 
+################### Simple Heuristic (SH) ###################
+Profit: 73772.0 Objective value: -39770.30117050068 Time: 1563.082339902267
+
+################### Random Local Search (RLS) ###################
+Profit: 56591.0 Objective value: -1905.1496742383315 Time: 805.2884041057039
+
+################### Evolutionary Algorithm (EA) ###################
+Profit: 59226.0 Objective value: 746.6090235993397 Time: 805.0576951597008
+
+################### RLS Metropolis Algorithm ###################
+Profit: 56303.0 Objective value: -2132.009461160771 Time: 804.446716150341
+Reading TTPInstance from file: ttp/instances/sample/eil51_n150_uncorr_07.ttp... 
+################### Simple Heuristic (SH) ###################
+Profit: 52122.0 Objective value: -48846.60308373159 Time: 1582.5799856384263
+
+################### Random Local Search (RLS) ###################
+Profit: 38791.0 Objective value: -8534.507044480291 Time: 741.7791072802554
+
+################### Evolutionary Algorithm (EA) ###################
+Profit: 45725.0 Objective value: -1922.8596082188233 Time: 746.8316553012355
+
+################### RLS Metropolis Algorithm ###################
+Profit: 43353.0 Objective value: -4548.96630321601 Time: 750.8145188591851
+Reading TTPInstance from file: ttp/instances/sample/u1060_n10590_bounded-strongly-corr_02.ttp... 
+################### Simple Heuristic (SH) ###################
+Profit: 2179428.0 Objective value: -167166.10018662177 Time: 499275.3404652386
+
+################### Random Local Search (RLS) ###################
+Profit: 1843973.0 Objective value: -294170.5470442008 Time: 454924.1589455746
+
+################### Evolutionary Algorithm (EA) ###################
+Profit: 2178609.0 Objective value: 284918.853701134 Time: 402912.7970848651
+
+################### RLS Metropolis Algorithm ###################
+Profit: 1849086.0 Objective value: -235413.34116644855 Time: 443510.49812052096
+Reading TTPInstance from file: ttp/instances/sample/u1060_n10590_uncorr-similar-weights_10.ttp... 
+################### Simple Heuristic (SH) ###################
+Profit: 5179832.0 Objective value: -1446970.7516466612 Time: 731435.182300956
+
+################### Random Local Search (RLS) ###################
+Profit: 3662819.0 Objective value: -74620.61542922026 Time: 412520.9288553223
+
+################### Evolutionary Algorithm (EA) ###################
+Profit: 4295618.0 Objective value: 446847.1661689412 Time: 424809.1428069601
+
+################### RLS Metropolis Algorithm ###################
+Profit: 3515074.0 Objective value: -167931.32297310373 Time: 406512.7288049783
+Reading TTPInstance from file: ttp/instances/sample/u1060_n10590_uncorr_07.ttp... 
+################### Simple Heuristic (SH) ###################
+Profit: 4036450.0 Objective value: -2241064.416252345 Time: 759070.6670196307
+
+################### Random Local Search (RLS) ###################
+Profit: 2747254.0 Objective value: -444962.6521451399 Time: 385999.5951807908
+
+################### Evolutionary Algorithm (EA) ###################
+Profit: 3709484.0 Objective value: 420063.4759044028 Time: 397753.38864517503
+
+################### RLS Metropolis Algorithm ###################
+Profit: 2606618.0 Objective value: -557229.5155706787 Time: 382569.2280012913
