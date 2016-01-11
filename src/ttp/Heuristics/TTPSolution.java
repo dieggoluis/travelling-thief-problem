@@ -49,6 +49,11 @@ public class TTPSolution {
         System.out.println();
     }
     
+   public void printSimple()
+   {
+        System.out.print("Profit: "+fp+" Objective value: "+ob +" Time: "+ft);
+   }
+
     public void printFull() {
         this.println();
         System.out.println("tspTour "+Arrays.toString(tspTour));
@@ -63,7 +68,6 @@ public class TTPSolution {
         this.tspTour = tspTour;
         this.packingPlan = packingPlan;
     }
-    
     
     
     /** 
@@ -121,5 +125,4 @@ public class TTPSolution {
 
             }
     }
-
 }

@@ -41,22 +41,36 @@ public class TTPInstance {
       TTPInstance test = new TTPInstance(input);
 
 
+      // Test heuristics
       TTPHeuristic heuristic = new TTPHeuristic(test);
       TTPSolution solution = heuristic.SimpleHeuristic();
       System.out.println("\n################### Simple Heuristic (SH) ###################");
-      test.evaluate(solution);
+      test.evaluate(solution, false);
+      solution.printSimple();
+      System.out.println();
 
-      int number_iterations = 10000;
-      TTPSolution solution2 = heuristic.RLS(number_iterations);
+      int number_iterations = 25;
+
+      solution = heuristic.RLS(number_iterations);
       System.out.println("\n################### Random Local Search (RLS) ###################");
-      test.evaluate(solution2);
+      test.evaluate(solution, false);
+      solution.printSimple();
+      System.out.println();
 
       solution = heuristic.EA(number_iterations);
       System.out.println("\n################### Evolutionary Algorithm (EA) ###################");
-      test.evaluate(solution);
+      test.evaluate(solution, false);
+      solution.printSimple();
+      System.out.println();
 
-      System.out.println("done");
-      test.printInstance(false);
+      double T = 0.1; 
+      solution = heuristic.RLSMetropolis(number_iterations, T);
+      System.out.println("\n################### RLS Metropolis Algorithm ###################");
+      test.evaluate(solution, false);
+      solution.printSimple();
+
+      System.out.println();
+      //test.printInstance(false);
    }
 
    public String problemName;
@@ -189,8 +203,7 @@ public class TTPInstance {
     *          "ob" objective value,
     *          "wend" weight of the knapsack at the end of the tour
     */
-   public void evaluate(TTPSolution solution) {      
-      boolean debugPrint = true;		// Boolean to print the steps of the evaluation
+   public void evaluate(TTPSolution solution, boolean debugPrint) {      
 
       int[] tour = solution.tspTour;	// TSP part of the solution
       int[] z = solution.packingPlan;	// KP part of the solution	   
@@ -219,13 +232,12 @@ public class TTPInstance {
       for (int i=0; i<tour.length-1; i++) {            
          if (debugPrint) 
             System.out.print("\ni="+i+" checking packing: ");
-         int currentCityTEMP = tour[i]; // Label of the input for the city
-         int currentCity = currentCityTEMP-1; // Label of the algorithm for the city
+         int currentCity = tour[i]; // Label of the algorithm for the city
 
          // Nothing to be picked at the first city
          if (i>0){ 
             if (debugPrint) 
-               System.out.print("city "+currentCityTEMP+" cityIndexForItem[][] "+currentCity+" (this.numberOfNodes="+this.numberOfNodes+"): ");
+               System.out.print("city "+(currentCity+1)+" cityIndexForItem[][] "+currentCity+" (this.numberOfNodes="+this.numberOfNodes+"): ");
 
             // Items of the city
             for (int itemNumber=0; itemNumber<itemsPerCity; itemNumber++) {
@@ -235,7 +247,7 @@ public class TTPInstance {
                   System.out.print("indexOfPackingPlan="+indexOfPackingPlan+" ");
 
                // Calculate the index of the item in the items-array
-               int itemIndex = currentCity+itemNumber*(this.numberOfNodes-1); 
+               int itemIndex = (currentCity-1)+itemNumber*(this.numberOfNodes-1); 
                if (debugPrint) 
                   System.out.print("itemIndex="+itemIndex+" ");
 
@@ -254,13 +266,14 @@ public class TTPInstance {
                }
             }
          }
+
          if (debugPrint) 
             System.out.println();
 
          // Index of the next city in the tour
          int h= (i+1)%(tour.length-1);
          if (debugPrint) 
-            System.out.println("  i="+i+" h="+h + " tour[i]="+tour[i]+" tour[h]="+tour[h]);
+            System.out.println("  i="+i+" h="+h + " tour[i]="+(tour[i]+1)+" tour[h]="+(tour[h]+1));
 
          // Calculate the distance between this city and the next one
          long distance = (long)Math.ceil(distances(tour[i],tour[h]));
