@@ -3,7 +3,8 @@ Linux users can use the file makefile (src/makefile) to compile \*.java files th
 		make
 
 Also we can remove \*.class files using the following command
-   make clean
+
+		make clean
 
 To run an instance, in the folder src/ttp we do the following
 
