@@ -1,0 +1,292 @@
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%
+%        LOADING DOCUMENT
+%
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+\documentclass[newPxFont]{beamer}
+\usefonttheme{serif}
+\usetheme{sthlm}
+%\usecolortheme{sthlmv42}
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%        LOADING PACKAGES
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+%\inputencoding{latin1}
+%\usepackage[utf8x]{inputenc} 
+
+\usepackage{chronology}
+
+
+\renewcommand{\event}[3][e]{%
+  \pgfmathsetlength\xstop{(#2-\theyearstart)*\unit}%
+  \ifx #1e%
+    \draw[fill=black,draw=none,opacity=0.5]%
+      (\xstop, 0) circle (.2\unit)%
+      node[opacity=1,rotate=45,right=.2\unit] {#3};%
+  \else%
+    \pgfmathsetlength\xstart{(#1-\theyearstart)*\unit}%
+    \draw[fill=black,draw=none,opacity=0.5,rounded corners=.1\unit]%
+      (\xstart,-.1\unit) rectangle%
+      node[opacity=1,rotate=45,right=.2\unit] {#3} (\xstop,.1\unit);%
+  \fi}%
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%        BEAMER OPTIONS
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+%\setbeameroption{show notes}
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%
+%   PRESENTATION INFORMATION
+%
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+\title{\textup{TRAVELING THIEF PROBLEM}}
+\subtitle{}
+%\date{\small{\jobname}}
+\date{}
+\author{}
+\institute{}
+
+
+
+\begin{document}
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%
+%   TITLE PAGE
+%
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+\maketitle
+
+%\begin{frame}[plain]
+%   \titlepage
+%\end{frame}
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%
+%   TABLE OF CONTENTS: OVERVIEW
+%
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%
+%   SECTION: BACKGROUND
+%
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+\section{\textup{SPLITTING THE PROBLEM: TSP SUBPROBLEM}}
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%   FRAME:
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\begin{frame}[c]{Trivial tour}
+\vspace{-2em}
+\begin{itemize}
+	\item Return the trivial tour $1, 2, ..., n$ where $n$ is the number of vertices.
+\end{itemize}
+\vspace{2em}
+\end{frame}
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%   FRAME:
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\begin{frame}[c]{Nearest neighbor}
+\vspace{-2em}
+\begin{itemize}
+	\item For every city, take the nearest neighbor that has not been visited and adds it to the tour
+	\item Since we have a complete graph, this always leads to a solution
+	\item Usually gives good solutions for the TSP.
+\end{itemize}
+\vspace{2em}
+\end{frame}
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%   FRAME:
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+\begin{frame}[c]{2-opt solution}
+\vspace{-2em}
+
+	\begin{itemize}
+	\item Works only for metric graphs (as our instances).
+	\item Works only for metric graphs (as our instances).
+	\item Double every edge and generate a Eulerian path.
+	\item Whenever we visit a city that has already been visited, shortcut the path (triangular inequality).
+	\end{itemize}
+	\vspace{2em}
+\end{frame}
+
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%
+%   SECTION: BACKGROUND
+%
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+\section{\textup{SPLITTING THE PROBLEM: PACKING PLAN}}
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%   FRAME:
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+\begin{frame}[c]{Constructive heuristic}
+\vspace{-2em}
+
+\begin{itemize}
+	\item Generate scores $(score, u)$ for each item based on the potential profit.
+	\item Choose the best possible items for this metric that don't overflow the maximal weight capacity.
+\end{itemize}
+\vspace{2em}
+\end{frame}
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%   FRAME: What is Beamer?
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+\begin{frame}[c]{Random Local Search}
+\vspace{-2em}
+\begin{block}{Neighborhood}
+Two packing plans are neighbors if only if the packing status of only one item is different
+\end{block}
+
+\begin{itemize}
+\item Start with the empty backpack.
+\item Invert the packing status for a random item (take a neighbor of the current solution).
+\item If this represents an improvement and does not exceed the weight of the knapsack, take this as the solution.
+\item Repeat the process until no improvement is found for $N$ interactions.
+\end{itemize}
+
+\end{frame}
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%   FRAME: What is Beamer?
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+\begin{frame}[c]{Evolutionary algorithm}
+\vspace{-2em}
+
+\begin{itemize}
+\item Start with an empty backpack.
+\item Invert the packing status of each item with probability $1/m$ ($m$ is the quantity of items).
+\item If this represents an improvement and does not exceed the weight of the knapsack, take this as the solution.
+\item Repeat the process until no improvement is found for $N$ interactions
+\end{itemize}
+\end{frame}
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%   FRAME: What is Beamer?
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+\begin{frame}[c]{Metropolis algorithm}
+\vspace{-2em}
+\begin{itemize}
+\item Execute a random local search but may take packing plans worst than the current solution.
+\item Return the best solution seen during the whole execution of the algorithm.
+\end{itemize}
+\end{frame}
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%
+%   SECTION: Modèles ÉconomiquesUPDATESS
+%
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+\section{\textup{RESULTS}}
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%   FRAME:
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\begin{frame}{Results: Uncorrelated items}
+\vspace{-2em}
+\begin{table}[]
+	\caption{Objective value of different heuristics for a given set of instances with uncorrelated
+	items. The TSP subproblem was solved using the nearest neighbor heuristic}
+	\begin{tabular}[]{lrrrr}
+		\toprule
+		\textbf{}			& \multicolumn{1}{c}{\textbf{a280}}
+		                    & \multicolumn{1}{c}{\textbf{d1655}}
+		                    & \multicolumn{1}{c}{\textbf{eil51}}
+		                    & \multicolumn{1}{c}{\textbf{ul1060}} \\
+		\midrule                                           
+		SH				& -4595 & -136782 & -6757 & -167166	\\[0.25em]
+		RLS				& -2444 & -14928 & -1858 & -325761  \\[0.25em]
+		EA				& 42965 & 690949 & 1843 & 300736   	\\[0.25em]
+		Metropolis		& 2168 & -45453 & 1317 & -317541	\\
+		\bottomrule
+	\end{tabular}
+	\label{tab:WindowFunctions}
+\end{table}
+\end{frame}
+
+
+\begin{frame}{Results: Uncorrelated	items with similar weights}
+\vspace{-2em}
+\begin{table}[]
+	\caption{Objective value of different heuristics for a given set of instances with uncorrelated
+	items but with similar weights. The TSP subproblem was solved using the nearest neighbor
+	heuristic}
+	\begin{tabular}[]{lrrrr}
+		\toprule
+		\textbf{}			& \multicolumn{1}{c}{\textbf{a280}}
+		                    & \multicolumn{1}{c}{\textbf{d1655}}
+		                    & \multicolumn{1}{c}{\textbf{eil51}}
+		                    & \multicolumn{1}{c}{\textbf{ul1060}} \\
+		\midrule                                           
+		SH				& -161393 & -2763579 & -39770 & -1446970	\\[0.25em]
+		RLS				& 598     & -218440  & -1354  & -115155	    \\[0.25em]
+		EA				& 78810   & 580623   & 746    & 446964   	\\[0.25em]
+		Metropolis		& 31771   & -39170   & -1255  & -22768	\\
+		\bottomrule
+	\end{tabular}
+	\label{tab:WindowFunctions}
+\end{table}
+\end{frame}
+
+
+\begin{frame}{Results: Bounded strongly correlated items}
+\vspace{-2em}
+\begin{table}[]
+	\caption{Objective value of different heuristics for a given set of instances with Bounded strongly correlated
+	items. The TSP subproblem was solved using the nearest neighbor	heuristic}
+	\begin{tabular}[]{lrrrr}
+		\toprule
+		\textbf{}			& \multicolumn{1}{c}{\textbf{a280}}
+		                    & \multicolumn{1}{c}{\textbf{d1655}}
+		                    & \multicolumn{1}{c}{\textbf{eil51}}
+		                    & \multicolumn{1}{c}{\textbf{ul1060}} \\
+		\midrule                                           
+		SH				& -256694 & -1963700 & -48846 & -2241064	\\[0.25em]
+		RLS				& 31394 & -29619 & -3313 & -329533	    \\[0.25em]
+		EA				& 73465	& 1212683 & -1922 & 408846   	\\[0.25em]
+		Metropolis		& 22808	& -24877 & -8312 & -137528	\\
+		\bottomrule
+	\end{tabular}
+	\label{tab:WindowFunctions}
+\end{table}
+\end{frame}
+
+\begin{frame}{Analyse}
+\vspace{-2em}
+\begin{itemize}
+\item Constructive heuristic takes a lot of items increasing the time to finish the tour. This affects negatively its objective value.
+\item RLS heuristic gives a reasonably good solution in a short period of time.
+\item EA heuristic gives a good solution but takes more time to do it.
+\item Metropolis should be better than the others iterative heuristics since we allow it to get out of local maximum. However, the problem is how choose a good value of $T$.
+\end{itemize}
+\end{frame}
+
+\section{\textup{Possible improvements}}
+
+\begin{frame}{Possible improvements}
+\vspace{-2em}
+\begin{itemize}
+\item Start the randomized algorithms with a better departing point, maybe, our constructive heuristic.
+\item Use more powerful computers which would allow more iterations for the randomized algorithms.
+\item Study for an optimal "temperature" in the metropolis algorithm.
+\item Try to find a direct algorithm for solving both problems at once.
+\end{itemize}
+\end{frame}
+
+
+\end{document}

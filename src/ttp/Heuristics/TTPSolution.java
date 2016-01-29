@@ -49,6 +49,12 @@ public class TTPSolution {
       System.out.println();
    }
 
+   public void printSimple()
+   {
+      System.out.println("\nWend | WendUsed | Final Profit | Time to Finish | Objective Value");
+      System.out.println(wend+" "+wendUsed+" "+fp+" "+" "+ft+" "+ob);
+   }
+
    public void printSolution()
    {
       //System.out.print("Profit: "+fp+" Objective value: "+ob +" Time: "+ft);

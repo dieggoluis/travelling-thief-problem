@@ -1,0 +1,276 @@
+Reading TTPInstance from file: ttp/instances/sample/a280_n1395_bounded-strongly-corr_02.ttp... 
+################### Simple Heuristic (SH) ###################
+
+Wend | WendUsed | Final Profit | Time to Finish | Objective Value
+1.0 241540.0 289740.0  7000.97634006171 -100844.47001204279
+
+
+################### Random Local Search (RLS) ###################
+
+Wend | WendUsed | Final Profit | Time to Finish | Objective Value
+42350.0 199191.0 257491.0  5784.020767451292 -65199.51861610758
+
+
+################### Evolutionary Algorithm (EA) ###################
+
+Wend | WendUsed | Final Profit | Time to Finish | Objective Value
+43526.0 198015.0 276615.0  5305.918303527125 -19402.182153778325
+
+
+################### RLS Metropolis Algorithm ###################
+
+Wend | WendUsed | Final Profit | Time to Finish | Objective Value
+46322.0 195219.0 251319.0  5643.266254846515 -63518.82435788709
+Reading TTPInstance from file: ttp/instances/sample/a280_n1395_uncorr-similar-weights_10.ttp... 
+################### Simple Heuristic (SH) ###################
+
+Wend | WendUsed | Final Profit | Time to Finish | Objective Value
+98623.0 1175398.0 669109.0  9217.877600594762 -274156.414868862
+
+
+################### Random Local Search (RLS) ###################
+
+Wend | WendUsed | Final Profit | Time to Finish | Objective Value
+540633.0 733388.0 488769.0  5490.755479509862 -73100.00821824418
+
+
+################### Evolutionary Algorithm (EA) ###################
+
+Wend | WendUsed | Final Profit | Time to Finish | Objective Value
+502473.0 771548.0 541395.0  5590.37380127112 -30667.95108407375
+
+
+################### RLS Metropolis Algorithm ###################
+
+Wend | WendUsed | Final Profit | Time to Finish | Objective Value
+527581.0 746440.0 494847.0  5542.623119239629 -72329.62379179127
+Reading TTPInstance from file: ttp/instances/sample/a280_n1395_uncorr_07.ttp... 
+################### Simple Heuristic (SH) ###################
+
+Wend | WendUsed | Final Profit | Time to Finish | Objective Value
+1.0 440229.0 523490.0  10566.735765664112 -433433.59093854204
+
+
+################### Random Local Search (RLS) ###################
+
+Wend | WendUsed | Final Profit | Time to Finish | Objective Value
+194405.0 245825.0 398168.0  5200.784975617556 -72815.08739192586
+
+
+################### Evolutionary Algorithm (EA) ###################
+
+Wend | WendUsed | Final Profit | Time to Finish | Objective Value
+187017.0 253213.0 456573.0  5224.328550762506 -16542.193557052582
+
+
+################### RLS Metropolis Algorithm ###################
+
+Wend | WendUsed | Final Profit | Time to Finish | Objective Value
+193989.0 246241.0 402733.0  5239.943918279714 -71796.3212394109
+Reading TTPInstance from file: ttp/instances/sample/d1655_n16540_bounded-strongly-corr_02.ttp... 
+################### Simple Heuristic (SH) ###################
+
+Wend | WendUsed | Final Profit | Time to Finish | Objective Value
+1.0 2839043.0 3411443.0  125184.7131851483 330647.20851350063
+
+
+################### Random Local Search (RLS) ###################
+
+Wend | WendUsed | Final Profit | Time to Finish | Objective Value
+477053.0 2361991.0 2913991.0  140079.85646534138 -533374.2676120512
+
+
+################### Evolutionary Algorithm (EA) ###################
+
+Wend | WendUsed | Final Profit | Time to Finish | Objective Value
+180371.0 2658673.0 3631573.0  119328.10647877144 694908.2995574349
+
+
+################### RLS Metropolis Algorithm ###################
+
+Wend | WendUsed | Final Profit | Time to Finish | Objective Value
+310451.0 2528593.0 3195693.0  132910.89744768312 -75244.18618748151
+Reading TTPInstance from file: ttp/instances/sample/d1655_n16540_uncorr-similar-weights_07.ttp... 
+################### Simple Heuristic (SH) ###################
+
+Wend | WendUsed | Final Profit | Time to Finish | Objective Value
+704.0 1.0572181E7 5887795.0  197439.04266269706 -2457953.3333522053
+
+
+################### Random Local Search (RLS) ###################
+
+Wend | WendUsed | Final Profit | Time to Finish | Objective Value
+3646052.0 6926833.0 4535662.0  128113.41782586293 -879692.1714992262
+
+
+################### Evolutionary Algorithm (EA) ###################
+
+Wend | WendUsed | Final Profit | Time to Finish | Objective Value
+2946873.0 7626012.0 5511033.0  130802.570818007 -17991.6684771562
+
+
+################### RLS Metropolis Algorithm ###################
+
+Wend | WendUsed | Final Profit | Time to Finish | Objective Value
+3745359.0 6827526.0 4459214.0  127585.29120641491 -933816.259295159
+Reading TTPInstance from file: ttp/instances/sample/d1655_n16540_uncorr-similar-weights_10.ttp... 
+################### Simple Heuristic (SH) ###################
+
+Wend | WendUsed | Final Profit | Time to Finish | Objective Value
+654412.0 1.4449709E7 8095677.0  206128.12964251952 -1868556.7869193945
+
+
+################### Random Local Search (RLS) ###################
+
+Wend | WendUsed | Final Profit | Time to Finish | Objective Value
+6700266.0 8403855.0 5135333.0  120853.89893626439 -706744.4745790213
+
+
+################### Evolutionary Algorithm (EA) ###################
+
+Wend | WendUsed | Final Profit | Time to Finish | Objective Value
+5101301.0 1.000282E7 6784398.0  129050.5829098804 546092.8221363816
+
+
+################### RLS Metropolis Algorithm ###################
+
+Wend | WendUsed | Final Profit | Time to Finish | Objective Value
+6329706.0 8774415.0 5447113.0  122974.21716433825 -497460.65772411134
+Reading TTPInstance from file: ttp/instances/sample/eil51_n150_bounded-strongly-corr_02.ttp... 
+################### Simple Heuristic (SH) ###################
+
+Wend | WendUsed | Final Profit | Time to Finish | Objective Value
+19.0 24676.0 30376.0  1053.5667390130561 -6161.694508972789
+
+
+################### Random Local Search (RLS) ###################
+
+Wend | WendUsed | Final Profit | Time to Finish | Objective Value
+8161.0 16534.0 19934.0  1047.450050343395 -16391.567745908942
+
+
+################### Evolutionary Algorithm (EA) ###################
+
+Wend | WendUsed | Final Profit | Time to Finish | Objective Value
+3283.0 21412.0 30312.0  869.5945110101659 154.46235816744593
+
+
+################### RLS Metropolis Algorithm ###################
+
+Wend | WendUsed | Final Profit | Time to Finish | Objective Value
+3260.0 21435.0 29235.0  930.7599671749208 -3043.755661626252
+Reading TTPInstance from file: ttp/instances/sample/eil51_n150_uncorr-similar-weights_10.ttp... 
+################### Simple Heuristic (SH) ###################
+
+Wend | WendUsed | Final Profit | Time to Finish | Objective Value
+9392.0 127603.0 73032.0  1507.5600006090062 -36477.158444238215
+
+
+################### Random Local Search (RLS) ###################
+
+Wend | WendUsed | Final Profit | Time to Finish | Objective Value
+53580.0 83415.0 55508.0  916.4215753949009 -11060.863236685604
+
+
+################### Evolutionary Algorithm (EA) ###################
+
+Wend | WendUsed | Final Profit | Time to Finish | Objective Value
+52583.0 84412.0 58647.0  920.7369394583832 -8235.331282256957
+
+
+################### RLS Metropolis Algorithm ###################
+
+Wend | WendUsed | Final Profit | Time to Finish | Objective Value
+57615.0 79380.0 53809.0  905.6441718665749 -11976.992644387996
+Reading TTPInstance from file: ttp/instances/sample/eil51_n150_uncorr_07.ttp... 
+################### Simple Heuristic (SH) ###################
+
+Wend | WendUsed | Final Profit | Time to Finish | Objective Value
+59.0 48150.0 51034.0  1598.1174640334036 -50925.89420533115
+
+
+################### Random Local Search (RLS) ###################
+
+Wend | WendUsed | Final Profit | Time to Finish | Objective Value
+23014.0 25195.0 39823.0  872.1455921933043 -15819.888781932816
+
+
+################### Evolutionary Algorithm (EA) ###################
+
+Wend | WendUsed | Final Profit | Time to Finish | Objective Value
+21682.0 26527.0 45906.0  870.6774410702326 -9643.220740280834
+
+
+################### RLS Metropolis Algorithm ###################
+
+Wend | WendUsed | Final Profit | Time to Finish | Objective Value
+22735.0 25474.0 42069.0  860.6063192483485 -12837.683168044634
+Reading TTPInstance from file: ttp/instances/sample/u1060_n10590_bounded-strongly-corr_02.ttp... 
+################### Simple Heuristic (SH) ###################
+
+Wend | WendUsed | Final Profit | Time to Finish | Objective Value
+1.0 1822028.0 2193728.0  433721.48475863104 155237.02163443412
+
+
+################### Random Local Search (RLS) ###################
+
+Wend | WendUsed | Final Profit | Time to Finish | Objective Value
+244430.0 1577599.0 1995699.0  454450.5940182053 -140218.79188556504
+
+
+################### Evolutionary Algorithm (EA) ###################
+
+Wend | WendUsed | Final Profit | Time to Finish | Objective Value
+117068.0 1704961.0 2325161.0  411533.6967076363 390952.6254741093
+
+
+################### RLS Metropolis Algorithm ###################
+
+Wend | WendUsed | Final Profit | Time to Finish | Objective Value
+220508.0 1601521.0 2043221.0  451509.2291905598 -78872.37719563115
+Reading TTPInstance from file: ttp/instances/sample/u1060_n10590_uncorr-similar-weights_10.ttp... 
+################### Simple Heuristic (SH) ###################
+
+Wend | WendUsed | Final Profit | Time to Finish | Objective Value
+510584.0 9159980.0 5165228.0  708647.3250997722 -1255116.7654039366
+
+
+################### Random Local Search (RLS) ###################
+
+Wend | WendUsed | Final Profit | Time to Finish | Objective Value
+3813328.0 5857236.0 3713497.0  435558.18259149115 -232660.13427890977
+
+
+################### Evolutionary Algorithm (EA) ###################
+
+Wend | WendUsed | Final Profit | Time to Finish | Objective Value
+3352301.0 6318263.0 4308587.0  446321.4070883596 264915.051779462
+
+
+################### RLS Metropolis Algorithm ###################
+
+Wend | WendUsed | Final Profit | Time to Finish | Objective Value
+4138828.0 5531736.0 3447113.0  425324.37587999646 -406325.84547276795
+Reading TTPInstance from file: ttp/instances/sample/u1060_n10590_uncorr_07.ttp... 
+################### Simple Heuristic (SH) ###################
+
+Wend | WendUsed | Final Profit | Time to Finish | Objective Value
+1.0 3369096.0 4070025.0  708097.9209525454 -1785944.8062775498
+
+
+################### Random Local Search (RLS) ###################
+
+Wend | WendUsed | Final Profit | Time to Finish | Objective Value
+1470734.0 1898363.0 2769472.0  407095.101666721 -597204.4907837822
+
+
+################### Evolutionary Algorithm (EA) ###################
+
+Wend | WendUsed | Final Profit | Time to Finish | Objective Value
+1218521.0 2150576.0 3746101.0  417801.3000069757 290884.2489423109
+
+
+################### RLS Metropolis Algorithm ###################
+
+Wend | WendUsed | Final Profit | Time to Finish | Objective Value
+1357948.0 2011149.0 3084788.0  414108.990352142 -339893.3502122145

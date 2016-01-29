@@ -1,0 +1,5 @@
+\beamer@endinputifotherversion {3.24pt}
+\beamer@sectionintoc {1}{\textup {SPLITTING THE PROBLEM: TSP SUBPROBLEM}}{2}{0}{1}
+\beamer@sectionintoc {2}{\textup {SPLITTING THE PROBLEM: PACKING PLAN}}{6}{0}{2}
+\beamer@sectionintoc {3}{\textup {RESULTS}}{11}{0}{3}
+\beamer@sectionintoc {4}{\textup {Possible improvements}}{16}{0}{4}

@@ -204,7 +204,7 @@ public class TTPHeuristic {
          this.instance.evaluate(neighbor, false);
 
          // If the item still fit in the knapsack
-         if(neighbor.wendUsed < this.instance.capacityOfKnapsack){
+         if(neighbor.wendUsed <= this.instance.capacityOfKnapsack){
             if(neighbor.ob >= auxSolution.ob){
                auxSolution = neighbor;
                if(auxSolution.ob > output.ob) 
