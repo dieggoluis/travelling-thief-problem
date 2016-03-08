@@ -42,18 +42,3 @@ The main goal of the project is to implement and test existing simple heuristics
 [3] Approximate Approaches to the Traveling Thief Problem. Hayden Faulkner, Sergey Polyakovskiy, Tom Schultz, Markus Wagner. GECCO 2015: 385-392
 
 [4] CEC Competition at IEEE WCCI 2014: Optimization of problems with multiple interdependent components [(www)](http://cs.adelaide.edu.au/~optlog/CEC2014Comp/)
-
-Linux users can use the file makefile (src/makefile) to compile \*.java files that belong to the project using the following command
-
-		make
-
-Also we can remove \*.class files using the following command
-
-		make clean
-
-To run an instance, in the folder src/ttp we do the following
-
-		java ttp.Heuristics.TTPInstance ttp/Instances/<folder_instance>/<name_instance>
-
-If you want to modify the TSP heuristic or the parameters of the heuristics it's necessary to modify the TSPHeuristic.java and TTPHeuristic.java, respectively
-
